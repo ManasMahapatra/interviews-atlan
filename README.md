@@ -1,5 +1,7 @@
 ## Interview: Atlan
 
+Walkthrough Vide: https://drive.google.com/file/d/11hink-G5HQ1L4T6dsQfhjMX1MZxAiykE/view?usp=sharing
+
 ### Framework Chosen
 
 I chose to use Vite + React for this project. Vite is a fast and lightweight build tool that offers quick compilation and hot module replacement, making the development process smooth and efficient. React, on the other hand, is a popular and widely used JavaScript library for building user interfaces. I chose React for its quick setup, component-based architecture, and strong community support.
