@@ -21,8 +21,13 @@ Efficient virtualization of large datasets
 Reusing DOM elements for improved performance
 Windowing implementation for optimized rendering
 
+
 #### fakerJS
 I integrated fakerJS to generate dummy data for testing purposes. While exploring options for generating dummy data, I found that using free APIs like PunkAPI or NewsAPI had limitations that could hinder testing. fakerJS is a lightweight library that allows for the creation of realistic dummy data. Some benefits of using fakerJS include:
+
+Lightweight and easy to use
+Ability to generate realistic dummy data
+Flexibility in customizing data generation based on specific requirements
 
 ### Performance
 ![image](https://github.com/ManasMahapatra/interviews-atlan/assets/28961707/1000653f-35d6-412c-a89e-c378105730fe)
@@ -35,7 +40,3 @@ In the first screenshot, as you can see CPU usages spike when I start generating
 
 In the second screenshot, as you can see, when I start scrolling the CPU usages seem to increase. Behind the scenes if you look to the bottom highlights, you can see JS heap and Nodes start increasing. This happens during infinite scroll, as new elements are being updated, as heap size keeps increasing, however you will see a drop when garbage collection happens, do remove unnecessary data when we are past a certain part of list. This is handled by the virtualisation library, to have more control over garbage collection and DOM element recylcing, we can implement virtualisation of our own, and decide how many active nodes to keep in memory.
 
-
-Lightweight and easy to use
-Ability to generate realistic dummy data
-Flexibility in customizing data generation based on specific requirements
