@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "jsx": "react-jsx", // Make sure you have the jsx compiler option set to a valid value. For React projects, this is usually "react" or "react-jsx".
+    "target": "esnext", // Specify ECMAScript target version: "es3" (default), "es5", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020", "esnext".
+    "module": "esnext", // Specify module code generation: "none", "commonjs", "amd", "system", "umd", "es2015", "es2020", "esnext".
+    "lib": ["dom", "dom.iterable", "esnext"], // Specify a list of library files to be included in the compilation: "es5", "es6", "dom", etc.
+
+    /* Strict Type-Checking Options */
+    "strict": true, // Enable all strict type-checking options.
+    "noImplicitAny": true, // Raise error on expressions and declarations with an implied 'any' type.
+    "strictNullChecks": true, // Enable strict null checks.
+    "strictFunctionTypes": true, // Enable strict checking of function types.
+    "strictBindCallApply": true, // Enable strict 'bind', 'call', and 'apply' methods on functions.
+    "strictPropertyInitialization": true, // Enable strict checking of property initialization in classes.
+    "noImplicitThis": true, // Raise error on 'this' expressions with an implied 'any' type.
+    "alwaysStrict": true, // Parse in strict mode and emit "use strict" for each source file.
+
+    /* Additional Checks */
+    "noUnusedLocals": true, // Report errors on unused locals.
+    "noUnusedParameters": true, // Report errors on unused parameters.
+    "noImplicitReturns": true, // Report error when not all code paths in function return a value.
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement.
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // Specify module resolution strategy: "node" for Node.js, or "classic".
+    "baseUrl": "./", // Base directory to resolve non-relative module names.
+    "paths": {}, // A series of entries which re-map imports to lookup locations relative to the 'baseUrl'.
+    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports.
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export.
+
+    /* Advanced Options */
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts).
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "resolveJsonModule": true, // Include modules imported with '.json' extension.
+    "isolatedModules": true, // Ensure that each file can be safely transpiled without relying on other imports.
+    "noEmit": true // Do not emit outputs (no output files are generated).
+  },
+  "include": ["src/**/*"], // Specify files to be included in compilation with a glob pattern.
+  "exclude": ["node_modules", "dist", "build"] // Exclude these folders from the compilation process.
+}
