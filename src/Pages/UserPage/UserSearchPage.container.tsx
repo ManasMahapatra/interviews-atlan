@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from "react";
-import { BeerPageView } from "./BeerPage.view";
-import { fetchNews } from "./Fetchers/NewsFetcher";
-import { UserDetailType } from "./NewsPageTypes";
+import { UserSearchPageView } from "./UserSearchPage.view";
+import { fetchUsers } from "./Fetchers/UsersFetcher";
+import { UserDetailType } from "./UserTypes";
 
 export type QueryConfigType = {
     nameFilter?: string;
@@ -9,7 +9,7 @@ export type QueryConfigType = {
     limit: number;    
 }
 
-export const BeerPageContainer : React.FC = () => {
+export const UserSearchPageContainer : React.FC = () => {
     const [areResultsLoading, setAreResultsLoading] = useState<boolean>(false);
     const [searchResults, setSearchResults] = useState<Array<UserDetailType>>([]);
     const [queryConfig, setQueryConfig] = useState<QueryConfigType>({
@@ -41,7 +41,7 @@ export const BeerPageContainer : React.FC = () => {
 
     const fetchResults = useCallback(async () => {
         setAreResultsLoading(true)
-        const newSearchResults = await fetchNews(queryConfig, true);
+        const newSearchResults = await fetchUsers(queryConfig, true);
         /**
          * Once we get the new results we need to append it to existing results.
          */
@@ -66,7 +66,7 @@ export const BeerPageContainer : React.FC = () => {
                 && lastVisibleChildELement === searchResults.length - 1
             ) {
                 setAreResultsLoading(true)
-                const newSearchResults = await fetchNews(queryConfig, false);
+                const newSearchResults = await fetchUsers(queryConfig, false);
                 setSearchResults((prevSearchResults) => [
                     ...prevSearchResults,
                     ...newSearchResults
@@ -82,7 +82,7 @@ export const BeerPageContainer : React.FC = () => {
     }, [fetchResults])
 
     return (
-        <BeerPageView
+        <UserSearchPageView
             onNameChange={onNameChange}
             onLimitChange={onLimitChange}
             onSearchUserClick={onSearchUserClick}

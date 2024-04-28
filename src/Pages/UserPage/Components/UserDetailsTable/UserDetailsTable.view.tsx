@@ -1,6 +1,6 @@
 import { Row, Table, flexRender } from "@tanstack/react-table";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { UserDetailType } from "../../NewsPageTypes";
+import { UserDetailType } from "../../UserTypes";
 import { Table as ChakraTable,  Flex,  TableContainer, Tbody, Td, Th, Thead, Tr, useMediaQuery } from "@chakra-ui/react";
 import { Virtualizer } from "@tanstack/react-virtual";
 

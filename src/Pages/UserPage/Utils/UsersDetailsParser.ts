@@ -1,4 +1,4 @@
-import { UserDetailType } from "../NewsPageTypes"
+import { UserDetailType } from "../UserTypes"
 import { faker } from '@faker-js/faker';
 
 let LAST_SERIAL_NUMBER = 0;

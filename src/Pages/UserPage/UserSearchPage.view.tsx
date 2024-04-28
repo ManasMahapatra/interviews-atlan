@@ -1,11 +1,11 @@
 import { Box, Flex, Spinner, useBreakpointValue, Text, useMediaQuery } from "@chakra-ui/react";
 import React, { useMemo } from "react";
 import TopSearchSection from "./Components/TopSearchSection";
-import { UserDetailType } from "./NewsPageTypes";
+import { UserDetailType } from "./UserTypes";
 import UserDetailsTable from "./Components/UserDetailsTable";
-import { QueryConfigType } from "./BeerPage.container";
+import { QueryConfigType } from "./UserSearchPage.container";
 
-interface BeerPageViewProps {
+interface UserSearchPageViewProps {
     onNameChange: (nameQuery: string) => void;
     onLimitChange: (limit: number) => void;
     onSearchUserClick: () => void;
@@ -16,7 +16,7 @@ interface BeerPageViewProps {
     onSelectedColumnChange: (selectedColumns: string) => void;
 }
 
-export const BeerPageView : React.FC<BeerPageViewProps> = ({
+export const UserSearchPageView : React.FC<UserSearchPageViewProps> = ({
     onNameChange,
     onLimitChange,
     onSearchUserClick,

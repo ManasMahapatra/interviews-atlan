@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+## Interview: Atlan
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Framework Chosen
 
-Currently, two official plugins are available:
+I chose to use Vite + React for this project. Vite is a fast and lightweight build tool that offers quick compilation and hot module replacement, making the development process smooth and efficient. React, on the other hand, is a popular and widely used JavaScript library for building user interfaces. I chose React for its quick setup, component-based architecture, and strong community support.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Libraries Used
+#### TanStack Table
+I utilized TanStack Table to render tables in this project. TanStack Table provides fine-grained control over table rendering while remaining lightweight as it is a headless UI component. Some benefits of using TanStack Table include:
 
-## Expanding the ESLint configuration
+Fine-grained control over table rendering
+Lightweight and efficient
+Headless UI approach allows for flexibility in styling and customization
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+#### TanStack Virtual
+TanStack Virtual was used for virtualization of data in this project. As the project needed to support large datasets, I required a solution for reusing DOM elements and implementing windowing for the table. TanStack Virtual provides efficient virtualization capabilities. Benefits of using TanStack Virtual include:
 
-- Configure the top-level `parserOptions` property like this:
+Efficient virtualization of large datasets
+Reusing DOM elements for improved performance
+Windowing implementation for optimized rendering
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+#### fakerJS
+I integrated fakerJS to generate dummy data for testing purposes. While exploring options for generating dummy data, I found that using free APIs like PunkAPI or NewsAPI had limitations that could hinder testing. fakerJS is a lightweight library that allows for the creation of realistic dummy data. Some benefits of using fakerJS include:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Lightweight and easy to use
+Ability to generate realistic dummy data
+Flexibility in customizing data generation based on specific requirements

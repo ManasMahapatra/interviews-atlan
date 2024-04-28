@@ -1,9 +1,9 @@
 import React, { useMemo, useRef } from "react";
-import { UserDetailType } from "../../NewsPageTypes";
+import { UserDetailType } from "../../UserTypes";
 import { getCoreRowModel, useReactTable } from "@tanstack/react-table";
 import { UserDetailsTableView } from "./UserDetailsTable.view";
 import { useVirtualizer } from "@tanstack/react-virtual";
-import { QueryConfigType } from "../../BeerPage.container";
+import { QueryConfigType } from "../../UserSearchPage.container";
 
 interface UserDetailsTableContainerProps {
     searchResults: UserDetailType[];

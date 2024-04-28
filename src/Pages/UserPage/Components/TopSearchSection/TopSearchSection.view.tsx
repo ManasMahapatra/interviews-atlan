@@ -1,7 +1,7 @@
 import { Box, Button, Input, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import MessageSection from "./Components";
-import { QueryConfigType } from "../../BeerPage.container";
+import { QueryConfigType } from "../../UserSearchPage.container";
 
 interface TopSearchSectionViewProps {
     onNameChange: (nameQuery: string) => void;
@@ -99,10 +99,10 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
     const handleKeyPress = (event: { key: string; }) => {
         // Check if the pressed key is Enter
         if (event.key === 'Enter') {
-          // Call your function here
-          onCTAClick();
+            // Call your function here
+            queryConfig.selectedColumns.length ? onCTAClick() : onDisabledClick()
         }
-      };
+    };
 
     return (
         <Box padding="16px">
@@ -143,6 +143,7 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
                     onChange={(event) => {
                         onNameChange(event.target.value as string)
                     }}
+                    spellCheck={false}
                     onKeyDown={handleKeyPress}
                 />
                 <Text color={"#52B788"} display="inline" paddingRight={"5px"}>
@@ -158,6 +159,7 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
                     onChange={(event) => {
                         onLimitChange(parseInt(event.target.value))
                     }}
+                    spellCheck={false}
                     onKeyDown={handleKeyPress}
                 />
             </Box>

@@ -1,11 +1,11 @@
-import { QueryConfigType } from "../BeerPage.container";
-import { generateFakeUsers } from "../Utils/NewsDetailParser";
+import { QueryConfigType } from "../UserSearchPage.container";
+import { generateFakeUsers } from "../Utils/UsersDetailsParser";
 
 function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export const fetchNews = async (queryConfig: QueryConfigType, isNewSetRequest: boolean) => {
+export const fetchUsers = async (queryConfig: QueryConfigType, isNewSetRequest: boolean) => {
     /**
      * This delay has been added to replicate a API call response time for huge data sets.
      * The delay can be adjusted from here if required.
