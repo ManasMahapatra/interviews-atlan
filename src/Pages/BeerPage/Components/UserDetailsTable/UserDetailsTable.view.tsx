@@ -1,7 +1,7 @@
 import { Row, Table, flexRender } from "@tanstack/react-table";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { UserDetailType } from "../../NewsPageTypes";
-import { Box, Table as ChakraTable,  TableContainer, Tbody, Td, Th, Thead, Tr, useMediaQuery } from "@chakra-ui/react";
+import { Table as ChakraTable,  Flex,  TableContainer, Tbody, Td, Th, Thead, Tr, useMediaQuery } from "@chakra-ui/react";
 import { Virtualizer } from "@tanstack/react-virtual";
 
 interface UserDetailsTableViewProps {
@@ -38,7 +38,8 @@ export const UserDetailsTableView: React.FC<UserDetailsTableViewProps> = ({
         setTableHeight(containerRefHeight)
     }, [containerRefHeight])
     return (
-        <Box
+        <Flex
+            justifyContent={"center"}
             position={"relative"}
             height="inherit"
             margin={"0 5px"}
@@ -125,6 +126,6 @@ export const UserDetailsTableView: React.FC<UserDetailsTableViewProps> = ({
                     </Tbody>
                 </ChakraTable>
             </TableContainer>
-        </Box>
+        </Flex>
     )
 }

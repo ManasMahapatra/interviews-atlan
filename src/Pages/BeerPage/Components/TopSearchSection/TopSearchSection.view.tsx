@@ -64,6 +64,10 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
             message += 'If "*" is provided, no other parameters should be provided.';
         }
 
+        if (typeof queryConfig.limit === "number" && queryConfig.limit < 20) {
+            message += "The minimum limit should be 20. Please update the limit and try again."
+        }
+
         if (message.length) {
             setTempMessageConfig({
                 message,
@@ -92,6 +96,14 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
         }
     };
 
+    const handleKeyPress = (event: { key: string; }) => {
+        // Check if the pressed key is Enter
+        if (event.key === 'Enter') {
+          // Call your function here
+          onCTAClick();
+        }
+      };
+
     return (
         <Box padding="16px">
             <Box
@@ -116,6 +128,7 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
                     }}
                     spellCheck={false}
                     value={queryConfig.selectedColumns}
+                    onKeyDown={handleKeyPress}
                 />
                 <Text color={"#52B788"} display="inline">
                     FROM people WHERE person_name is
@@ -130,6 +143,7 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
                     onChange={(event) => {
                         onNameChange(event.target.value as string)
                     }}
+                    onKeyDown={handleKeyPress}
                 />
                 <Text color={"#52B788"} display="inline" paddingRight={"5px"}>
                     AND LIMIT
@@ -144,6 +158,7 @@ export const TopSearchSectionView : React.FC<TopSearchSectionViewProps> = ({
                     onChange={(event) => {
                         onLimitChange(parseInt(event.target.value))
                     }}
+                    onKeyDown={handleKeyPress}
                 />
             </Box>
             <MessageSection
