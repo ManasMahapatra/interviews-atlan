@@ -1,6 +1,6 @@
 ## Interview: Atlan
 
-Walkthrough Video: https://drive.google.com/file/d/11hink-G5HQ1L4T6dsQfhjMX1MZxAiykE/view?usp=sharing
+Walkthrough Video [Please play at highest res, for better clarity]: https://drive.google.com/file/d/11hink-G5HQ1L4T6dsQfhjMX1MZxAiykE/view?usp=sharing
 
 ### Framework Chosen
 
